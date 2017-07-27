@@ -23,12 +23,14 @@ import {
   SimpleAlertExampleBlock
 } from './demo/Alert'
 import ShareDemo from './demo/Share'
+import Test from './demo/Test'
+import PanResponderExample from './demo/PanResponder'
 
 export default class demoApp extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ListViewDemo />
+        <Test />
       </View>
     );
   }
