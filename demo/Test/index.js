@@ -12,31 +12,29 @@ const {
 } = ReactNative;
 
 const getCoordinate = () => {
-  let width = 300
+  let _width = 300
   let height = 150
   const w = 30
   const h = 30
   // let x = 0
   const result = []
 
-  let y = 15  
-  while (height > 15) {
-    let width = 300
-    let x = 15
+  let y = w/2
+  while (height > w/2) {
+    let width = _width
+    let x = w/2
 
-    while (width > 15) {
+    while (width > w/2) {
       result.push({
         x,
-        y,
-        width: 30,
-        height: 30
+        y
       })
-      x += w/2
-      width -= w/2
+      x += w/5
+      width -= w/5
     }
 
-    y += h/2
-    height -= w/2
+    y += h/5
+    height -= w/5
   }
 
   return result
@@ -111,8 +109,7 @@ class Test extends React.Component {
       const rangeX = x - item.x
       const rangeY = y - item.y
 
-      if (rangeX <= 7.5 && rangeX > -7.5 && rangeY <= 7.5 && rangeY > -7.5) {
-        console.log(i, x, y, rangeX, rangeY)
+      if (rangeX <= 6 && rangeX > -6 && rangeY <= 6 && rangeY > -6) {
         if (!this.state.showIndexs[i]) result.push(i)
       }
     })
@@ -126,7 +123,7 @@ class Test extends React.Component {
         {
           Object.keys(this.state.showIndexs).map((i) => {
             const o = this.coordinates[i]            
-            return <View key={`show_${i}`} pointerEvents={'none'} style={[style.img, {left: o.x - 15, top: o.y - 15}]} />
+            return <View key={`show_${i}`} pointerEvents={'none'} style={[style.img, {left: o.x - 6, top: o.y - 6}]} />
           })
         }
       </View>
