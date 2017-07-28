@@ -11,6 +11,7 @@ const {
   PanResponder
 } = ReactNative;
 
+// 获取坐标点
 const getCoordinate = () => {
   let _width = 300
   let height = 150
@@ -40,18 +41,16 @@ const getCoordinate = () => {
   return result
 }
 
-class Test extends React.Component {
+class Guaguaka extends React.Component {
   constructor(props) {
     super(props)
 
-    this.coordinates = getCoordinate()
+    this.touchCoordinates = getCoordinate()
     this.state = {
-      showIndexs: {
-
-      }
+      showIndexs: {}
     }
 
-    console.log(this.coordinates)
+    console.log(this.touchCoordinates)
   }
 
   componentWillMount = () => {
@@ -105,7 +104,7 @@ class Test extends React.Component {
   getTouchPoint(x, y) {
     const result = []
 
-    this.coordinates.forEach((item, i) => {
+    this.touchCoordinates.forEach((item, i) => {
       const rangeX = x - item.x
       const rangeY = y - item.y
 
@@ -122,7 +121,7 @@ class Test extends React.Component {
       <View style={style.container} {...this._panResponder.panHandlers} ref={'test'}>
         {
           Object.keys(this.state.showIndexs).map((i) => {
-            const o = this.coordinates[i]            
+            const o = this.touchCoordinates[i]            
             return <View key={`show_${i}`} pointerEvents={'none'} style={[style.img, {left: o.x - 6, top: o.y - 6}]} />
           })
         }
@@ -147,4 +146,4 @@ const style = StyleSheet.create({
   }
 })
 
-module.exports = Test;
+module.exports = Guaguaka;
