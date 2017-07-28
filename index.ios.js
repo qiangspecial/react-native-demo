@@ -23,12 +23,14 @@ import {
   SimpleAlertExampleBlock
 } from './demo/Alert'
 import ShareDemo from './demo/Share'
+import Guaguaka from './demo/guaguaka'
+import PanResponderExample from './demo/PanResponder'
 
 export default class demoApp extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ListViewDemo />
+        <Guaguaka />
       </View>
     );
   }
