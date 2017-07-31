@@ -8,7 +8,6 @@ import TestScreen from './test-page'
 
 const App = StackNavigator({
   Main: {screen: MainScreen},
-  test2: {screen: TestScreen2},
   ...componentScreens
 })
 
