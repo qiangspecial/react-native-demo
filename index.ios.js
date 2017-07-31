@@ -8,29 +8,16 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
   View
-} from 'react-native';
-import ActivityIndicatorDemo from './demo/activityIndicator'
-import KeyboardAvoidingViewExample from './demo/KeyboardAvoidingView'
-import PickerDemo from './demo/Picker'
-import ScrollViewDemo from './demo/ScrollView'
-import ListViewDemo from './demo/ListView'
-import SectionListDemo from './demo/SectionList'
-import SliderDemo from './demo/Slider'
-import {
-  AlertExample,
-  SimpleAlertExampleBlock
-} from './demo/Alert'
-import ShareDemo from './demo/Share'
-import Guaguaka from './demo/guaguaka'
-import PanResponderExample from './demo/PanResponder'
+} from 'react-native'
+
+import App from './src/app'
 
 export default class demoApp extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Guaguaka />
+        <App />
       </View>
     );
   }

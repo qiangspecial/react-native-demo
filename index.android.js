@@ -7,22 +7,16 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import ActivityIndicatorDemo from './demo/activityIndicator'
-import KeyboardAvoidingViewExample from './demo/KeyboardAvoidingView'
-import PickerDemo from './demo/Picker'
-import ScrollViewDemo from './demo/ScrollView'
-import ListViewDemo from './demo/ListView'
-import SectionListDemo from './demo/SectionList'
+  StyleSheet
+} from 'react-native'
+
+import App from './src/app'
 
 export default class demoApp extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ListViewDemo />
+        <App />
       </View>
     );
   }
