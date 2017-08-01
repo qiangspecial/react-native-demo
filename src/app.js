@@ -3,13 +3,13 @@ import {
 } from 'react-navigation'
 
 import MainScreen from './index'
-import componentScreens from './component-demo/index'
+import componentScreens from './component-demo'
+import WhyDidYouUpdateScreen from './why-did-you-update-demo'
 import TestScreen from './test-page'
-import TestScreen2 from './test-page2'
 
 const App = StackNavigator({
   Main: {screen: MainScreen},
-  test2: {screen: TestScreen2},
+  WhyDidYouUpdate: {screen: WhyDidYouUpdateScreen},
   ...componentScreens
 })
 

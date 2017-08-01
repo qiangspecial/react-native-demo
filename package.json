@@ -12,7 +12,9 @@
     "react-native": "0.46",
     "react-navigation": "^1.0.0-beta.11"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "why-did-you-update": "0.0.8"
+  },
   "jest": {
     "preset": "react-native"
   }
