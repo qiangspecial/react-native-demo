@@ -11,6 +11,12 @@ import EntryRoute from './component/entry-route'
 import componentScreens from './component-demo/screens'
 
 const entrys = [{
+  title: '其他 demo',
+  list: [{
+    name: 'WhyDidYouUpdate',
+    text: 'why-did-you-update demo'
+  }]
+}, {
   title: 'react-native 官方组件demo',
   list: Object.keys(componentScreens).map(name => {
     return {
@@ -38,7 +44,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#fff',
   }
 });
 
