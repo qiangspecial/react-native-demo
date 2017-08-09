@@ -7,68 +7,32 @@ import {
   Text,
   Button
 } from 'react-native'
-import Person from './person'
+import ImmutableDemo from './immutable.js'
+import ImmutabilityHelperDemo from './immutability-helper.js'
+import Line from '../../component/line'
+
 
 export default class Demo extends Component {
   static navigationOptions = {
-    title: 'Why did you update'
+    title: 'immutability-helper 与 immutable-js 比较'
   }
 
   constructor(props) {
     super(props)
-
-    this.state = {
-      persons: {
-        zhangsan: {
-          name: '张三',
-          age: 18,
-          height: 170,
-          weight: {
-            num: 60
-          }
-        }, 
-        lisi: {
-          name: '李四',
-          age: 19,
-          height: 175,
-          weight: {
-            num: 85
-          }
-        }
-      }
-    }
   }
 
-  add = (name) => {
-    this.state.persons[name].age++
-    
-    this.setState(this.state)
-  }
-
-  addWeight = (name) => {
-    // 错误写法
-    // this.state.persons[name].weight.num++
-    this.state.persons[name].weight = {
-      num: this.state.persons[name].weight.num + 1
-    }
-    
-    this.setState(this.state)
-  }
+  
 
   render() {
-    const {persons} = this.state
 
     return (
       <View style={style.container}>
-        <Button title={'张三年龄+1'} onPress={() => {this.add('zhangsan')}} />
-        <Button title={'李四年龄+1'} onPress={() => {this.add('lisi')}} />
-        <Button title={'张三体重+1'} onPress={() => {this.addWeight('zhangsan')}} />
-        <Button title={'李四体重+1'} onPress={() => {this.addWeight('lisi')}} />
-        {
-          Object.keys(persons).map((name, i) => {
-            return <Person key={`person_${i}`} {...persons[name]} />
-          })
-        }
+        <Text style={style.header}>immutable</Text>
+        <Line color={'#666666'} />
+        <ImmutableDemo />
+        <Text style={style.header}>immutability-helper</Text>
+        <Line color={'#666666'} />
+        <ImmutabilityHelperDemo />
       </View>
     )
   }
@@ -80,14 +44,8 @@ const style = StyleSheet.create({
     backgroundColor: '#fff'
   },
   header: {
-    flex: 1,
-    height: 100,
-  },
-  headerText: {
-    textAlign: 'center'
-  },
-  row: {
-    flex: 1,
-    height: 69
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    fontSize: 14
   }
 })

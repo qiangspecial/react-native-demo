@@ -14,7 +14,10 @@ const entrys = [{
   title: '其他 demo',
   list: [{
     name: 'WhyDidYouUpdate',
-    text: 'why-did-you-update demo'
+    text: 'why-did-you-update'
+  }, {
+    name: 'ImmutabilityHelper',
+    text: 'immutability-helper'
   }]
 }, {
   title: 'react-native 官方组件demo',
